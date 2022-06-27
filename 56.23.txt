@@ -1,0 +1,16 @@
+int main()
+{
+    //56
+    vector<int> f(1000, 0);
+    f[2] = 1;
+    for (int i = 2; i <= 9; i++) {
+        if (i + 1 <= 10) f[i + 1] += f[i];
+        if (i * 2 <= 10) f[i * 2] += f[i];
+    }
+    for (int i = 10; i <= 34; i++) {
+        f[28] = 0;
+        f[i + 1] += f[i];
+        f[i * 2] += f[i];
+    }
+    cout << f[34];
+}
